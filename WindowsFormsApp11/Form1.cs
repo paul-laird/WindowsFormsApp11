@@ -12,9 +12,23 @@ namespace WindowsFormsApp11
 {
     public partial class Form1 : Form
     {
+        List<string> list = new List<string>();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            list.Add(textBox1.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            string text = "";
+            list.ForEach(x => text = text + string.Format("Entry {0}: {1}\n", ++i, x));
+            label1.Text = text;
         }
     }
 }
